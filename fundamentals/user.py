@@ -15,10 +15,11 @@ class User:
         self.account = BankAccount()
 
 
-
-    
+    # the property decorator turns a method with no parameters into a attribute
+    @property
     def display_info(self):
         print(f"First Name {self.first_name}\nLast Name: {self.last_name}\nEmail: {self.email}\nAge: {self.age}\nRewards Member? {self.is_rewards_member}\nGold Card Points: {self.gold_card_points}")
+
 
     def enroll(self):
         if self.is_rewards_member == True:
@@ -33,21 +34,26 @@ class User:
         self.gold_card_points -= amount
 
 
-
+    
     # these are instances of the Bankaccount class
     def make_deposit(self, amount):
-        self.account1.deposit(amount)
+        self.account.deposit(amount)
 
     def make_withdraw(self,amount):
-        self.account1.withdraw(amount)
+        self.account.withdraw(amount)
 
+    # the property decorator turns a method with no parameters into a attribute
+    @property
     def display_user_balance(self):
-        self.account1.display_account_info()
+        self.account.display_account_info()
 
 
 
 johnny = User('Johnny', 'Cash', 'jcash@yahoo.com', '50')
-johnny.display_info()
-johnny.make_deposit(5000)
-johnny.make_withdraw(1000)
-johnny.display_user_balance()
+# johnny.display_info
+# johnny.make_deposit(5000)
+# johnny.make_withdraw(2000)
+# johnny.display_user_balance
+johnny.display_user_balance
+johnny.enroll() 
+johnny.display_info
